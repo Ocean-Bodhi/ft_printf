@@ -12,7 +12,8 @@ CPPFLAGS = -I $(INC_DIR)
 # Source files and object files
 SRC = \
 	$(SRC_DIR)ft_printf.c \
-	$(SRC_DIR)ft_putchar.c
+	$(SRC_DIR)ft_putchar.c \
+	$(SRC_DIR)ft_putnbr.c 
 
 OBJ = $(SRC:$(SRC_DIR)%.c=$(OBJS_DIR)/%.o)
 

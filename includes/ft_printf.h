@@ -8,6 +8,7 @@
 
 int	ft_printf(const char *format, ...);
 int	ft_putchar(int c);
+int	ft_putnbr(int n);
 
 
 #endif
