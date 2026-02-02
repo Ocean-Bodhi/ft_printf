@@ -2,8 +2,20 @@
 
 int	ft_putnbr(int n)
 {
-	n = n + '0';
-	if (write(1, &n, 1) == -1)
-		return (-1);
-	return (1);
+	int	len;
+	long	nl;
+
+	len = 0;
+	nl = n;
+	//if (n  == -2147483648)
+	//	return (ft_putstr("-2147483648"));
+	if (nl < 0)
+	{
+		len += write(1, "-", 1);
+		nl = -nl;
+	}
+	if (nl > 9)
+		len += ft_putnbr(nl / 10);
+	len += ft_putchar((nl % 10) + '0');
+	return (len);
 }

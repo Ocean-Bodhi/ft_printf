@@ -38,20 +38,20 @@ static int	ft_conversion(const char type, va_list vargs)
 {
 	if (type == 'c' )
 		return (ft_putchar(va_arg(vargs, int)));
-	/*else if (type == 's')
-		return (ft_putstr(va_arg(vargs, const char *)));
+	else if (type == 's')
+		return (ft_putstr(va_arg(vargs, char *)));
 	else if (type == 'p')
-		return (ft_putptr(va_arg(vargs, void *)));*/
+		return (ft_putptr(va_arg(vargs, void *)));
 	else if (type == 'd' || type == 'i')
 		return (ft_putnbr(va_arg(vargs, int)));
-	/*else if (type == 'u')
+	else if (type == 'u')
 		return (ft_putunsg(va_arg(vargs, unsigned int)));
 	else if (type == 'x')
-		return (ft_puthex(va_arg(vargs, unsigned int)));
+		return (ft_puthex(va_arg(vargs, unsigned int), 0));
 	else if (type == 'X')
-		return (ft_puthex(va_arg(vargs, unsigned int)));
+		return (ft_puthex(va_arg(vargs, unsigned int), 1));
 	else if (type == '%')
-		return (ft_putchar('%'));*/
+		return (ft_putchar('%'));
 	return (-1);
 }
 
@@ -92,7 +92,7 @@ int	ft_printf(const char *format, ...)
 	va_end(vargs);
 	return (len);
 }
-
+/*
 # include <stdio.h>
 
 int	main(void)
@@ -110,10 +110,11 @@ int	main(void)
 
 	ft_printf("Mine is: i = %i, c = %c\n", i, c);
 	printf("Theirs is: i = %i, c = %c\n", i, c);
-	/*
+
 	ft_printf("Mine is: i = %i, c = %c, str = %s, ptr = %p, ui = %u, \
 	x = %x,'X' = %X, '%' = %%\n", i, c, s, *s, ui, ui, ui, c2);
 	//printf("Theirs is: i = %i, c = %c, str = %s, ui = %u, \
-	x = %x,'X' = %X, '%' = %%\n", i, c, s, *s, ui, ui, ui, c2);*/
+	x = %x,'X' = %X, '%' = %%\n", i, c, s, *s, ui, ui, ui, c2);
 	return (0);
 }
+*/
