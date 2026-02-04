@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: javisan2 <javisan2@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/02/03 13:49:10 by javisan2          #+#    #+#             */
+/*   Updated: 2026/02/03 13:49:15 by javisan2         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 /*
 Desciption:
 ft_printf(),
@@ -59,7 +71,7 @@ static int	ft_check(const char *str, va_list vargs, int i, int len)
 {
 	int	result;
 
-	if (!str) // Es necesario? Y (!vargs)? y los int?
+	if (!str)
 		return (-1);
 	result = 0;
 	while (str[i])
@@ -84,7 +96,7 @@ static int	ft_check(const char *str, va_list vargs, int i, int len)
 
 int	ft_printf(const char *format, ...)
 {
-	int	len;
+	int		len;
 	va_list	vargs;
 
 	va_start(vargs, format);
@@ -92,29 +104,3 @@ int	ft_printf(const char *format, ...)
 	va_end(vargs);
 	return (len);
 }
-/*
-# include <stdio.h>
-
-int	main(void)
-{
-	int	i;
-	char	c;
-	//char	s[] = "Hello 42";
-	//unsigned int	ui;
-	//char	c2;
-
-	i = 5;
-	c = 'A';
-	//c2 = '%';
-	//ui = -12;
-
-	ft_printf("Mine is: i = %i, c = %c\n", i, c);
-	printf("Theirs is: i = %i, c = %c\n", i, c);
-
-	ft_printf("Mine is: i = %i, c = %c, str = %s, ptr = %p, ui = %u, \
-	x = %x,'X' = %X, '%' = %%\n", i, c, s, *s, ui, ui, ui, c2);
-	//printf("Theirs is: i = %i, c = %c, str = %s, ui = %u, \
-	x = %x,'X' = %X, '%' = %%\n", i, c, s, *s, ui, ui, ui, c2);
-	return (0);
-}
-*/
